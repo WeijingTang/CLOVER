@@ -144,7 +144,9 @@ def main(sample, day0, barcodes, barcodes_day0, whitelist, dNumber):
     
 #
 # Day 0 filter
-#   
+# 
+    spath = sample
+    bpath = day0
     d_filter = {}
     A = blacklist(bpath)
     for file in os.listdir(spath):
