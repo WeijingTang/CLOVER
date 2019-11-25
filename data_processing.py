@@ -104,7 +104,7 @@ def sample_to_alignment(fn, b, wl):
 #
 # run needleall alignment
 #
-    os.system('sh jobarray_nd_bySample.sh' + ' ' + sample_name[0])
+    os.system('sh needleall_alignment.sh' + ' ' + sample_name[0])
     
 def Day_zero(bpath):
     
