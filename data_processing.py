@@ -171,10 +171,8 @@ def main(sample, day0, barcodes, barcodes_day0, whitelist, dNumber):
                     if nm[0] in A.keys():
                         bl = A[nm[0]]
                         if cigar not in bl:
-                            #fw.write(i)
                             df_list.append(i)
                     else:
-                        #fw.write(i)
                         df_list.append(i)
                 count += 1
             d_filter[nm[0]] = df_list
@@ -228,7 +226,6 @@ def main(sample, day0, barcodes, barcodes_day0, whitelist, dNumber):
         lef.append(total_eff)
         entropyD[design] = lef
         sorted_x = sorted(entropyD.items(), key=lambda kv: kv[1], reverse=True)
-        ## check fn 
     
     with open(sample_name[0] + ".txt", 'w') as fe:
         for item in sorted_x:
