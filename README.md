@@ -5,6 +5,8 @@ This pipeline process two samples(one sample and it's corresponding Day0 sample)
 # Parameters
 sample(*fastq.gz), Day0_sample(*fastq.gz), sample_barcode_list(column one: line number, column two: barcode list), Day0_sample_barcode_list(column one: line number, column two: barcode list), whitelist, downsample_number
 
+please use zgrep -onP "T{6}[ATCG]{14}TTT[ATCG]" sample > sample.bcgrep.txt to generate sample_barcode_list
+
 # Procedure
 there are six steps in data_processing.py 
 1.  Sample demutiplexing:
