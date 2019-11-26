@@ -12,7 +12,7 @@ there are six steps in data_processing.py
 2.  Grep target region:
    to each sequence, keep barcode and target region.
 3.  Sequence alignment:
-   data_processing.py will call needleall_alignment.sh automatically and output needleall alignment result.
+   data_processing.py will call needleall_alignment.sh automatically and output needleall alignment results.
 4.  Day0 filter:
    read all sample alignment results and remove the reads have the same Cigar String within the same design.
 5.  Downsample:
