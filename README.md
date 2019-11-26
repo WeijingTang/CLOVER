@@ -16,7 +16,7 @@ There are six steps in data_processing.py
 3.  Sequence alignment:
    data_processing.py will call needleall_alignment.sh automatically and output needleall alignment results.
 4.  Day0 filter:
-   read all sample alignment results and remove the reads have the same Cigar String within the same design.
+   read all sample alignment results and remove the reads have the same Cigar String within the same design in Day0 alignment.
 5.  Downsample:
    you can set a number, it will automatically downsample to that number.
 6.  Entropy calculation:
