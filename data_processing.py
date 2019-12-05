@@ -132,6 +132,27 @@ def Day_zero(bpath):
                         if line[5] != "74M" and line[5] not in bigD[name[0]]:
                             bigD[name[0]].append(line[5])
     return bigD
+
+#
+# recombination filter
+#
+
+def cigar_dic(cigar):
+    start = 0
+    #a = '1D10M1I10M1D20M'
+    listC = []
+    for num1, i_or_d, num2, m in re.findall('(\d+)([ID])(\d+)?([A-Za-z])?', cigar):
+        print(num1, i_or_d, start)
+        line = []
+        line.append(num1)
+        line.append(i_or_d)
+        line.append(start)
+        listC.append(line)
+        if num1:
+            start += int(num1)
+        if num2:
+            start += int(num2)
+    return listC
     
     
 def main(sample, day0, barcodes, barcodes_day0, whitelist, dNumber):
