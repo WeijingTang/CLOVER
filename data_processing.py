@@ -221,13 +221,21 @@ def main(sample, day0, barcodes, barcodes_day0, whitelist, dNumber):
         for count, i in enumerate(dsp_list[dline]):
             dlines = str(i).strip("\n").split("\t")
             cigar = dlines[5]
-            if cigar == "74M":
-                unedit_count +=1
-            design = dlines[2]
-            if cigar not in d_p.keys():
-                d_p[cigar] = 1
-            else:
-                d_p[cigar] += 1 
+            cd = cigar_dic(cigar)
+            
+            sentry = False
+            for g in cd:
+                if int(g[0]) > 52:
+                    sentry = True
+                    break
+            if ((sentry == False) and ("M" in last_string_all) and (int(last_m_str) >= 8)):                
+                if cigar == "74M":
+                    unedit_count +=1
+                design = dlines[2]
+                if cigar not in d_p.keys():
+                    d_p[cigar] = 1
+                else:
+                    d_p[cigar] += 1 
         if count > 0:
             total_eff = 1 - (unedit_count / count)
         else:
