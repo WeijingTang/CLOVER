@@ -134,7 +134,7 @@ def Day_zero(bpath):
     return bigD
 
 #
-# recombination filter
+# parse cigar string for recombination filter
 #
 
 def cigar_dic(cigar):
